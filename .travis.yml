@@ -1,8 +1,7 @@
 language: go
 
 go:
-- 1.7.*
+- release
 
 script:
-- go test -v
-- go build
+- go test -v ./...
