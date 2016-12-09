@@ -14,7 +14,7 @@ func main() {
 		fmt.Fprint(w, "Running")
 	})
 	http.HandleFunc("/fib", func(w http.ResponseWriter, r *http.Request) {
-		n := strconv.ParseInt(r.URL.Query().Get("n"), 10, 64)
+		n, _ := strconv.ParseInt(r.URL.Query().Get("n"), 10, 64)
 		fmt.Fprintf(w, "fib(%d)=%d", n, fib.Fib(n))
 	})
 	fmt.Println("Running..")
